@@ -1,0 +1,19 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/BUILD/*
+/packages
+/TextEditor.v12.suo
+/TextEditor/Form1.resx
+/TextEditor/StyleCop.Cache
+/TextEditor/TextEditor.csproj
+/TextEditor/TextEditor.csproj.user
+/TextEditor/bin/*
+/TextEditor/obj/*
+/TextEditorTests/StyleCop.Cache
+/TextEditorTests/bin/*
+/TextEditorTests/obj/*
+/CryptoText.v12.suo
+/TestResults
+/TestResults/*
