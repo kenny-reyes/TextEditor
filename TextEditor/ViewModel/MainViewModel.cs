@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Controls;
 using System.Windows.Input;
-using Example.TextEditor.Model.SystemIO;
+using Example.TextEditor.Application.SystemIO.Contracts;
+using Example.TextEditor.ViewModel.Base;
 using Example.TextEditor.ViewModel.Document;
 using Example.TextEditor.ViewModel.Parsing.XML;
-using Microsoft.TeamFoundation.MVVM;
 
 namespace Example.TextEditor.ViewModel
 {
@@ -60,7 +61,7 @@ namespace Example.TextEditor.ViewModel
 		/// Reference a new DocumentViewModel and include it in the LoadedDocuments list
 		/// </summary>
 		/// <param name="param">document object form the binding command</param>
-		public void NewDocumentAction()
+		public void NewDocumentAction(object o)
 		{
 			DocumentViewModel newDocument = new DocumentViewModel(_systemIOFacadeInstance, new XMLParserViewModel());
 			LoadedDocuments.Add(newDocument);
@@ -71,7 +72,7 @@ namespace Example.TextEditor.ViewModel
 		/// Open a list of documents
 		/// </summary>
 		/// <param name="param">normally this will be null</param>
-		public void OpenDocumentsAction()
+		public void OpenDocumentsAction(object o)
 		{
 			string[] pathsToOpen = _openSaveFileDialog.ShowOpen();
 			if (pathsToOpen != null)

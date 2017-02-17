@@ -1,6 +1,7 @@
-﻿using Microsoft.Win32;
+﻿using Example.TextEditor.Application.SystemIO.Contracts;
+using Microsoft.Win32;
 
-namespace Example.TextEditor.Model.SystemIO
+namespace Example.TextEditor.Application.SystemIO
 {
 	public class OpenSaveDialogFacade : IOpenSaveDialogFacade
 	{

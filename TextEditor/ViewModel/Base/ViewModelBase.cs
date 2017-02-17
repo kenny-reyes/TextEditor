@@ -1,42 +1,15 @@
 ﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
-namespace Sedecal.CryptoText.ViewModel.Base
+namespace Example.TextEditor.ViewModel.Base
 {
-	public class ViewModelBase : INotifyPropertyChanged
-	{
-		#region INotifyPropertyChanged Members
-		public event PropertyChangedEventHandler PropertyChanged;
+    public class ViewModelBase : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
 
-		protected void Notify(string propName)
-		{
-			//lanzar evento
-			if (this.PropertyChanged != null)
-			{
-				PropertyChanged(this, new PropertyChangedEventArgs(propName));
-			}
-		}
-		#endregion
-
-		private string id;
-		public string Id
-		{
-			get { return id; }
-			set
-			{
-				id = value;
-				Notify("Id");
-			}
-		}
-
-		private string name;
-		public string Name
-		{
-			get { return name; }
-			set
-			{
-				name = value;
-				Notify("Name");
-			}
-		}
-	}
+        protected virtual void RaisePropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
 }

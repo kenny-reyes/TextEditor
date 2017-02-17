@@ -1,7 +1,8 @@
 ﻿using System.IO;
-using Example.TextEditor.Model.Security;
+using Example.TextEditor.Application.Security;
+using Example.TextEditor.Application.SystemIO.Contracts;
 
-namespace Example.TextEditor.Model.SystemIO
+namespace Example.TextEditor.Application.SystemIO
 {
 	public class SystemIOFacade : ISystemIOFacade
 	{

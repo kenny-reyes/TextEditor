@@ -3,7 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Example.TextEditor.Model.Security
+namespace Example.TextEditor.Application.Security
 {
 	internal class Crypto
 	{
@@ -30,12 +30,12 @@ namespace Example.TextEditor.Model.Security
 		/// <param name="vector">El vector de encriptación</param>
 		internal Crypto(string key, string vector)
 		{
-			this.Key = MakeKeyByteArray(key);
-			this.IV = MakeKeyByteArray(vector);
+			Key = MakeKeyByteArray(key);
+			IV = MakeKeyByteArray(vector);
 
 			Rijndael rijndael = Rijndael.Create();
-			this.cryptoTransform = rijndael.CreateEncryptor(this.Key, this.IV);
-			this.decryptoTransform = rijndael.CreateDecryptor(this.Key, this.IV);
+			cryptoTransform = rijndael.CreateEncryptor(Key, IV);
+			decryptoTransform = rijndael.CreateDecryptor(Key, IV);
 		}
 
 		internal string EncryptText(string cadenaplana)
@@ -51,7 +51,7 @@ namespace Example.TextEditor.Model.Security
 			memStream = new MemoryStream(textoPlano.Length * 2);
 			/// Create a CryptoStream using the FileStream 
 			/// and the passed key and initialization vector (IV).
-			CryptoStream cStream = new CryptoStream(memStream, this.cryptoTransform, CryptoStreamMode.Write);
+			CryptoStream cStream = new CryptoStream(memStream, cryptoTransform, CryptoStreamMode.Write);
 			/// creamos el flujo
 			cStream.Write(textoPlano, 0, textoPlano.Length);
 			cStream.Close();
@@ -69,7 +69,7 @@ namespace Example.TextEditor.Model.Security
 
 			/// Create a CryptoStream using the FileStream 
 			/// and the passed key and initialization vector (IV).
-			CryptoStream cStream = new CryptoStream(memStream, this.decryptoTransform, CryptoStreamMode.Write);
+			CryptoStream cStream = new CryptoStream(memStream, decryptoTransform, CryptoStreamMode.Write);
 
 			cStream.Write(textoCifrado, 0, textoCifrado.Length); /// ciframos
 			cStream.Close();
@@ -85,7 +85,7 @@ namespace Example.TextEditor.Model.Security
 			Rijndael RijndaelAlg = Rijndael.Create();
 			CryptoStream cStream = new CryptoStream(
 				streamIn,
-				RijndaelAlg.CreateEncryptor(this.Key, this.IV), 
+				RijndaelAlg.CreateEncryptor(Key, IV), 
 				CryptoStreamMode.Read);
 
 			try
@@ -120,7 +120,7 @@ namespace Example.TextEditor.Model.Security
 			Rijndael RijndaelAlg = Rijndael.Create();
 			CryptoStream cStream = new CryptoStream(
 				streamIn,
-				RijndaelAlg.CreateDecryptor(this.Key, this.IV),
+				RijndaelAlg.CreateDecryptor(Key, IV),
 				CryptoStreamMode.Read);
 
 			try

@@ -1,5 +1,6 @@
 ﻿using System.IO;
-using Example.TextEditor.Model.SystemIO;
+using Example.TextEditor.Application.SystemIO;
+using Example.TextEditor.Application.SystemIO.Contracts;
 using Example.TextEditor.ViewModel.Document;
 using Example.TextEditor.ViewModel.Parsing.XML;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
-using Example.TextEditor.Model.SystemIO;
+using Example.TextEditor.Application.SystemIO;
+using Example.TextEditor.Application.SystemIO.Contracts;
 using Example.TextEditor.ViewModel;
 using Example.TextEditor.ViewModel.Document;
 using Microsoft.TeamFoundation.MVVM;
@@ -127,10 +128,8 @@ namespace TextEditorTests.UnitTests
 		{
 			//Arrange
 			MainViewModel mvvm = new MainViewModel(Mock.Of<IOpenSaveDialogFacade>(), Mock.Of<INotificationDialogFacade>(), Mock.Of<ISystemIOFacade>());
-			//Mock<IDocumentViewModel> documentMock = new Mock<IDocumentViewModel>();
 
-			//mvvm.SelectedDocument = documentMock.Object;
-			IDocumentViewModel oldDocument = mvvm.SelectedDocument;
+            IDocumentViewModel oldDocument = mvvm.SelectedDocument;
 			ICommand newCommand = mvvm.NewCommand;
 
 			//Act
@@ -660,7 +659,7 @@ namespace TextEditorTests.UnitTests
 			MainViewModel mvvm = new MainViewModel(openSaveDialogMock.Object, notificationDialogMock.Object, ioMock.Object);
 			
 			//Act
-			mvvm.OpenDocumentsAction();
+			mvvm.OpenDocumentsAction(new object());
 
 			//Assert
 			openSaveDialogMock.Verify(obj => obj.ShowOpen(), Times.Once);
@@ -687,7 +686,7 @@ namespace TextEditorTests.UnitTests
 			MainViewModel mvvm = new MainViewModel(openSaveDialogMock.Object, notificationDialogMock.Object, ioMock.Object);
 			
 			//Act
-			mvvm.OpenDocumentsAction();
+			mvvm.OpenDocumentsAction(new object());
 
 			//Assert
 			openSaveDialogMock.Verify(obj => obj.ShowOpen(), Times.Once);
@@ -712,7 +711,7 @@ namespace TextEditorTests.UnitTests
 			MainViewModel mvvm = new MainViewModel(openSaveDialogMock.Object, notificationDialogMock.Object, ioMock.Object);
 
 			//Act
-			mvvm.OpenDocumentsAction();
+			mvvm.OpenDocumentsAction(new object());
 
 			//Assert
 			openSaveDialogMock.Verify(obj => obj.ShowOpen(), Times.Once);
@@ -735,8 +734,8 @@ namespace TextEditorTests.UnitTests
 			MainViewModel mvvm = new MainViewModel(openSaveDialogMock.Object, notificationDialogMock.Object, ioMock.Object);
 
 			//Act
-			mvvm.OpenDocumentsAction();
-			mvvm.OpenDocumentsAction();
+			mvvm.OpenDocumentsAction(new object());
+			mvvm.OpenDocumentsAction(new object());
 
 			//Assert
 			openSaveDialogMock.Verify(obj => obj.ShowOpen(), Times.Exactly(2));
@@ -757,7 +756,7 @@ namespace TextEditorTests.UnitTests
 			MainViewModel mvvm = new MainViewModel(openSaveDialogMock.Object, notificationDialogMock.Object, ioMock.Object);
 
 			//Act
-			mvvm.OpenDocumentsAction();
+			mvvm.OpenDocumentsAction(null);
 
 			//Assert
 			openSaveDialogMock.Verify(obj => obj.ShowOpen(), Times.Exactly(1));

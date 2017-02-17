@@ -1,8 +1,8 @@
 ﻿using System.IO;
-using Example.TextEditor.Model.SystemIO;
+using Example.TextEditor.Application.SystemIO.Contracts;
+using Example.TextEditor.ViewModel.Base;
 using Example.TextEditor.ViewModel.Parsing;
 using Example.TextEditor.ViewModel.Parsing.Elements;
-using Microsoft.TeamFoundation.MVVM;
 
 namespace Example.TextEditor.ViewModel.Document
 {
@@ -15,7 +15,7 @@ namespace Example.TextEditor.ViewModel.Document
         #region constructors
         public DocumentViewModel(ISystemIOFacade ioManager, IParserViewModel iparser)
         {
-            this._ioManager = ioManager;
+            _ioManager = ioManager;
             Name = "New";
             _parser = iparser;
         }

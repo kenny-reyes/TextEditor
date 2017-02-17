@@ -1,4 +1,4 @@
-﻿using Example.TextEditor.Model.SystemIO;
+﻿using Example.TextEditor.Application.SystemIO.Contracts;
 using Example.TextEditor.ViewModel.Document;
 using Example.TextEditor.ViewModel.Parsing;
 using Example.TextEditor.ViewModel.Parsing.Elements;

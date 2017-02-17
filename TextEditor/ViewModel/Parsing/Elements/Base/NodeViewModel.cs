@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using Microsoft.TeamFoundation.MVVM;
+﻿using System.Collections.ObjectModel;
+using Example.TextEditor.ViewModel.Base;
 
-
-namespace Example.TextEditor.ViewModel.Elements
+namespace Example.TextEditor.ViewModel.Parsing.Elements.Base
 {
 	public class NodeViewModel : ViewModelBase
 	{

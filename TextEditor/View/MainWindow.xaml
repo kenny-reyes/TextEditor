@@ -61,8 +61,6 @@
 
 		</Grid>
 
-
-
 		<TabControl Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding LoadedDocuments}" SelectedItem="{Binding SelectedDocument, Mode=TwoWay}">
 			<TabControl.ItemTemplate>
 				<DataTemplate>

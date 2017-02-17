@@ -1,13 +1,13 @@
 ﻿using System.Windows;
 using System;
 using System.Windows.Threading;
-using Example.TextEditor.Model.SystemIO;
+using Example.TextEditor.Application.SystemIO;
 using Example.TextEditor.View;
 using Example.TextEditor.ViewModel;
 
 namespace Example.TextEditor
 {
-	public class App : Application
+	public class App : System.Windows.Application
 	{
 		[STAThread]
 		public static void Main()
@@ -18,8 +18,8 @@ namespace Example.TextEditor
 
 		public App()
 		{
-			AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(this.CurrentDomain_UnhandledException);
-			this.DispatcherUnhandledException += new DispatcherUnhandledExceptionEventHandler(Application_DispatcherUnhandledException);
+			AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+			DispatcherUnhandledException += new DispatcherUnhandledExceptionEventHandler(Application_DispatcherUnhandledException);
 		}
 
 
@@ -33,9 +33,9 @@ namespace Example.TextEditor
 					//viewModel
 				}
 			}
-			this.MainWindow = new MainWindow();
-			this.MainWindow.DataContext = viewModel;
-			this.MainWindow.Show();
+			MainWindow = new MainWindow();
+			MainWindow.DataContext = viewModel;
+			MainWindow.Show();
 			base.OnStartup(e);
 		}
 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Example.TextEditor.Model.SystemIO
+namespace Example.TextEditor.Application.SystemIO.Contracts
 {
 	public interface INotificationDialogFacade
 	{

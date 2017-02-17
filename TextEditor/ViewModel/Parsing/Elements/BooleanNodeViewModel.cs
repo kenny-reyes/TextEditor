@@ -1,4 +1,4 @@
-﻿using Example.TextEditor.ViewModel.Elements;
+﻿using Example.TextEditor.ViewModel.Parsing.Elements.Base;
 
 namespace Example.TextEditor.ViewModel.Parsing.Elements
 {

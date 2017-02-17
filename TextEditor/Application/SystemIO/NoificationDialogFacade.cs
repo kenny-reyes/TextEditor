@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows;
+using Example.TextEditor.Application.SystemIO.Contracts;
 
-namespace Example.TextEditor.Model.SystemIO
+namespace Example.TextEditor.Application.SystemIO
 {
 	public class NotificationDialogFacade : INotificationDialogFacade
 	{

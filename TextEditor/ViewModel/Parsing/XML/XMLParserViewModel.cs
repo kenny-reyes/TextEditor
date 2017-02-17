@@ -1,6 +1,6 @@
 ﻿using System.Xml;
+using Example.TextEditor.ViewModel.Base;
 using Example.TextEditor.ViewModel.Parsing.Elements;
-using Microsoft.TeamFoundation.MVVM;
 
 namespace Example.TextEditor.ViewModel.Parsing.XML
 {
@@ -10,10 +10,10 @@ namespace Example.TextEditor.ViewModel.Parsing.XML
 		private RootVM _root;
 		public RootVM Root
 		{
-			get { return this._root; }
+			get { return _root; }
 			private set
 			{
-				this._root = value;
+				_root = value;
 				RaisePropertyChanged("Root");
 			}
 		}

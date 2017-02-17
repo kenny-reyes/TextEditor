@@ -1,4 +1,4 @@
-﻿using Example.TextEditor.Model.Security;
+﻿using Example.TextEditor.Application.Security;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TextEditorTests.Integration
