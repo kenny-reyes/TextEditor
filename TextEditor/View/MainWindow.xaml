@@ -57,7 +57,7 @@
 					Command="{Binding AboutCommand}" />
 		</StackPanel>
 
-		<Grid Grid.Row="2" Grid.ColumnSpan="2" Background="LightGray">
+		<Grid Grid.Row="2" Grid.ColumnSpan="2" Background="Red">
 
 		</Grid>
 
