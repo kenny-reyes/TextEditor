@@ -26,7 +26,7 @@
 
 		<!-- Top toolBox -->
 		<StackPanel Orientation="Horizontal" Margin="5" Grid.ColumnSpan="2">
-			<Button Width="50" Height="60" Background="Aquamarine" Padding="5" Tag="New file"
+			<Button Width="100" Height="60" Background="Aquamarine" Padding="5" Tag="New file"
 					Content="{DynamicResource NewIcon}" Style="{DynamicResource ToolBarButtonStyle}" 
 					Command="{Binding NewCommand}" />
 			<Button Width="50" Height="60" Background="#FF9EB029" Padding="4,7" Tag="Open file" 
