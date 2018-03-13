@@ -26,33 +26,33 @@
 
 		<!-- Top toolBox -->
 		<StackPanel Orientation="Horizontal" Margin="5" Grid.ColumnSpan="2">
-			<Button Width="50" Height="60" Background="#FF787878" Padding="5" Tag="New file"
+			<Button Width="50" Height="60" Background="#FFFFFFFF" Padding="5" Tag="New file"
 					Content="{DynamicResource NewIcon}" Style="{DynamicResource ToolBarButtonStyle}" 
 					Command="{Binding NewCommand}" />
-			<Button Width="50" Height="60" Background="#FF9EB029" Padding="4,7" Tag="Open file" 
+			<Button Width="50" Height="60" Background="#FF888888" Padding="4,7" Tag="Open file" 
 					Content="{DynamicResource OpenIcon}" Style="{DynamicResource ToolBarButtonStyle}"
 					Command="{Binding OpenCommand}"/>
-			<Button Width="50" Height="60" Background="#FF000797" Padding="5" Tag="Save file" 
+			<Button Width="50" Height="60" Background="#FF000000" Padding="5" Tag="Save file" 
 					Content="{DynamicResource SaveIcon}" Style="{DynamicResource ToolBarButtonStyle}"
 					Command="{Binding SaveCommand}"/>
-			<Button Width="50" Height="60" Background="#FF000797" Padding="5" Tag="Save as"	
+			<Button Width="50" Height="60" Background="#FF000000" Padding="5" Tag="Save as"	
 					Content="{DynamicResource SaveAsIcon}" Style="{DynamicResource ToolBarButtonStyle}" 
 					Command="{Binding SaveAsCommand}" />
-			<Button Width="50" Height="60" Background="#FF000797" Padding="5" Tag="Save all" 
+			<Button Width="50" Height="60" Background="#FF000000" Padding="5" Tag="Save all" 
 					Content="{DynamicResource SaveAllIcon}" Style="{DynamicResource ToolBarButtonStyle}" 
 					Command="{Binding SaveAllCommand}" />
-			<Button Width="50" Height="60" Background="#FF000797" Padding="5" Tag="XML view" Margin="15,0,0,0" 
+			<Button Width="50" Height="60" Background="#FF000000" Padding="5" Tag="XML view" Margin="15,0,0,0" 
 					Content="{DynamicResource XMLIcon}" Style="{DynamicResource ToolBarButtonStyle}" 
 					Command="{Binding SaveAllCommand}" />
-			<Button Width="50" Height="60" Background="#FF787878" Padding="5" Tag="Close all" 
+			<Button Width="50" Height="60" Background="#FFFFFFFF" Padding="5" Tag="Close all" 
 					Content="{DynamicResource CloseIcon}" Style="{DynamicResource ToolBarButtonStyle}" 
 					Command="{Binding CloseAllCommand}" />
 		</StackPanel>																																			   
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5" Grid.ColumnSpan="2">
-			<Button Width="50" Height="60" Background="#FF404040" Padding="5" Tag="config" 
+			<Button Width="50" Height="60" Background="#FF888888" Padding="5" Tag="config" 
 					Content="{DynamicResource ConfigurationIcon}" 
 					Style="{DynamicResource ToolBarButtonStyle}" Command="{Binding ConfigCommand}" />
-			<Button Width="50" Height="60" Background="#FF0034E6" Padding="5" Tag="About" 
+			<Button Width="50" Height="60" Background="#FF888888" Padding="5" Tag="About" 
 					Content="{DynamicResource HelpIcon}" Style="{DynamicResource ToolBarButtonStyle}" 
 					Command="{Binding AboutCommand}" />
 		</StackPanel>
