@@ -67,7 +67,7 @@
 					<Grid Width="{Binding ActualWidth, RelativeSource={RelativeSource TemplatedParent}}">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="*" MinWidth="80" />
-							<ColumnDefinition Width="20" />
+							<ColumnDefinition Width="40" />
 							<ColumnDefinition Width="20" />
 						</Grid.ColumnDefinitions>
 						<TextBlock  Margin="7,2,5,2" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"
